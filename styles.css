@@ -1,0 +1,377 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #0d182c; /* Azul oscuro */
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre el logo y el menú */
+}
+
+/* Logo */
+header .logo {
+    flex: 1; /* Permite que el logo ocupe el espacio necesario */
+}
+
+header .logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: auto;
+    display: block;
+    margin-left: 1rem;
+}
+
+/* Menú */
+header nav {
+    flex: 2; /* Permite que el menú ocupe el espacio necesario */
+    display: flex;
+    justify-content: flex-end; /* Posiciona el menú a la derecha */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    background-color: #1a2633; /* Color de fondo del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave para el efecto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+}
+
+/* Efecto 3D al pasar el cursor por encima */
+header nav ul li a:hover {
+    transform: translateY(-4px) scale(1.05); /* Eleva y agranda el botón */
+    font-size: 1.1rem; /* Aumenta el tamaño de la fuente */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Eslogan */
+#inicio {
+    text-align: center;
+    background: linear-gradient(120deg, #001122, #002346); /* Escala de azules oscuros */
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    padding: 6rem 2rem; /* Aumentado el padding */
+    color: white;
+    margin-bottom: 6rem; /* Espacio extra entre secciones */
+}
+
+/* Estilos del eslogan */
+#eslogan {
+    font-size: 3.5rem; /* Tamaño grande */
+    font-weight: 700; /* Peso de fuente más grueso */
+    text-align: center;
+    color: white;
+    line-height: 1.2;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra del texto */
+}
+
+/* Primera parte del eslogan */
+#text-part1 {
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out forwards; /* Efecto de desvanecimiento */
+}
+
+/* Segunda parte con animación de entrada */
+#highlight {
+    font-size: 4rem; /* Tamaño más grande para resaltar */
+    font-weight: 700; /* Peso de fuente más grueso */
+    color: #ff7300; /* Azul brillante para resaltar */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px); /* Inicialmente se posiciona abajo */
+    animation: fadeInHighlight 2s ease-in-out 2s forwards, slideInZoom 2s ease-out 4s forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra del texto */
+    margin-bottom: 5px;
+}
+
+/* Animaciones */
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInHighlight {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInZoom {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Contenedor del botón */
+.cta-button-container {
+    text-align: center;
+    margin-top: 2rem; /* Espacio arriba del botón */
+}
+
+/* Estilos del botón */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(120deg, #6a1b9a, #8e24aa); /* Degradado en tonos morados */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para el efecto 3D */
+}
+
+/* Efecto al pasar el cursor por encima */
+.cta-button:hover {
+    background: linear-gradient(120deg, #8e24aa, #6a1b9a); /* Invertir el degradado para un efecto visual */
+    transform: translateY(-4px); /* Eleva el botón */
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
+}
+
+/* Video */
+.video-container {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Estilos del video */
+#video video {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto de profundidad */
+    animation: pulse 3s infinite; /* Aplicación de la animación */
+}
+
+/* Animación de pulso constante */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        transform: scale(1.02); /* Escala ligera para el efecto de pulso */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Sombra más intensa durante el pulso */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Contenedor del botón de agendar demo */
+.agendar-demo-container {
+    text-align: center;
+    margin-top: 1rem; /* Reducción del espacio arriba del botón */
+}
+
+/* Estilos del botón de agendar demo */
+.agendar-demo-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(120deg, #ff5722, #ff9800); /* Degradado en tonos naranjas */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para el efecto 3D */
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+}
+
+/* Efecto al pasar el cursor por encima */
+.agendar-demo-button:hover {
+    background: linear-gradient(120deg, #ff9800, #ff5722); /* Invertir el degradado para un efecto visual */
+    transform: translateY(-4px); /* Eleva el botón */
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
+}
+
+/* Nuestro proceso */
+
+/* Sección Nuestro Proceso */
+#nuestro-proceso {
+    background-color: #f0f4f8;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#nuestro-proceso h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.proceso-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem; /* Espacio entre cuadros */
+}
+
+.proceso-cuadro {
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.proceso-cuadro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.proceso-imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.proceso-cuadro:hover .proceso-imagen {
+    opacity: 0.7;
+}
+
+.proceso-contenido {
+    padding: 1.5rem;
+}
+
+.proceso-contenido h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.proceso-contenido p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* Agendar Llamada */
+#agendar-llamada {
+    background-color: #e4e4e4;
+    padding: 4rem 2rem;
+    margin-bottom: 4rem; /* Espacio extra entre secciones */
+}
+
+/* Preguntas Frecuentes */
+#preguntas {
+    padding: 4rem 2rem;
+    margin-bottom: 4rem; /* Espacio extra entre secciones */
+}
+
+#preguntas .faq .pregunta {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Animación del fondo */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 0;
+        padding: 0.5rem 1rem;
+    }
+
+    #inicio {
+        padding: 4rem 1rem; /* Reducido el padding en pantallas más pequeñas */
+    }
+
+    #eslogan {
+        font-size: 2.5rem; /* Reducido tamaño de fuente */
+    }
+
+    #highlight {
+        font-size: 3rem; /* Reducido tamaño de fuente */
+    }
+
+    #video {
+        padding: 2rem 1rem; /* Reducido padding en pantallas más pequeñas */
+    }
+
+    #agendar-llamada, #preguntas {
+        padding: 2rem 1rem; /* Reducido padding en pantallas más pequeñas */
+    }
+}
+
+/* Ajuste de desplazamiento para elementos */
+section {
+    scroll-margin-top: 80px; /* Ajusta este valor según el alto de tu header */
+}
