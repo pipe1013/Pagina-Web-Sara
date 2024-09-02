@@ -3,11 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #111727; /* Aplica el color de fondo a toda la página */
 }
 
 /* Header */
 header {
-    background-color: #0d182c; /* Azul oscuro */
+    background-color: #111727; /* Azul oscuro */
     color: white;
     padding: 1rem;
     position: sticky;
@@ -24,11 +25,14 @@ header .logo {
 }
 
 header .logo img {
-    height: 50px; /* Ajusta el tamaño del logo */
+    height: 50px; /* Mantiene la altura original */
     width: auto;
     display: block;
     margin-left: 1rem;
+    transform: scale(1); /* Aumenta el tamaño de la imagen */
+    transform-origin: left center; /* Asegura que la imagen se escale desde un punto adecuado */
 }
+
 
 /* Menú */
 header nav {
@@ -53,7 +57,6 @@ header nav ul li a {
     text-decoration: none;
     padding: 0.5rem 1rem;
     display: block;
-    background-color: #1a2633; /* Color de fondo del botón */
     border-radius: 5px; /* Bordes redondeados */
     transition: all 0.3s ease; /* Transición suave para el efecto */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
@@ -69,20 +72,21 @@ header nav ul li a:hover {
 /* Eslogan */
 #inicio {
     text-align: center;
-    background: linear-gradient(120deg, #001122, #002346); /* Escala de azules oscuros */
+    background: linear-gradient(#afd2cc);; /* Escala de azules oscuros */
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     padding: 6rem 2rem; /* Aumentado el padding */
-    color: white;
+    color: #000;
     margin-bottom: 6rem; /* Espacio extra entre secciones */
 }
 
 /* Estilos del eslogan */
 #eslogan {
-    font-size: 3.5rem; /* Tamaño grande */
+    font-family: 'Lora', serif; /* Aplica la fuente Lora */
+    font-size: 5rem; /* Tamaño grande */
     font-weight: 700; /* Peso de fuente más grueso */
     text-align: center;
-    color: white;
+    color: #fff;
     line-height: 1.2;
     margin: 0 auto;
     letter-spacing: 1.5px;
@@ -97,9 +101,10 @@ header nav ul li a:hover {
 
 /* Segunda parte con animación de entrada */
 #highlight {
-    font-size: 4rem; /* Tamaño más grande para resaltar */
+    font-family: 'Lora', serif; /* Aplica la fuente Lora */
+    font-size: 6rem; /* Tamaño más grande para resaltar */
     font-weight: 700; /* Peso de fuente más grueso */
-    color: #ff7300; /* Azul brillante para resaltar */
+    color: #7c00cf; /* Azul brillante para resaltar */
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
@@ -207,7 +212,7 @@ header nav ul li a:hover {
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
-    background: linear-gradient(120deg, #ff5722, #ff9800); /* Degradado en tonos naranjas */
+    background: linear-gradient(120deg, #6a1b9a, #ff05fb); /* Degradado en tonos naranjas */
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -219,7 +224,7 @@ header nav ul li a:hover {
 
 /* Efecto al pasar el cursor por encima */
 .agendar-demo-button:hover {
-    background: linear-gradient(120deg, #ff9800, #ff5722); /* Invertir el degradado para un efecto visual */
+    background: linear-gradient(120deg, #6a1b9a, #ff05fb); /* Invertir el degradado para un efecto visual */
     transform: translateY(-4px); /* Eleva el botón */
     font-size: 1.25rem; /* Aumenta el tamaño de la fuente */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
@@ -229,7 +234,7 @@ header nav ul li a:hover {
 
 /* Sección Nuestro Proceso */
 #nuestro-proceso {
-    background-color: #f0f4f8;
+    background-color: #111727;
     padding: 4rem 2rem;
     text-align: center;
     margin-bottom: 4rem;
@@ -238,7 +243,7 @@ header nav ul li a:hover {
 #nuestro-proceso h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
+    color: #fff;
     margin-bottom: 2rem;
 }
 
