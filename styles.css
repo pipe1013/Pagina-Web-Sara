@@ -1,0 +1,756 @@
+/* Estilos generales */
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111727; /* Aplica el color de fondo a toda la página */
+}
+
+/* Header */
+header {
+    background-color: #111727; /* Azul oscuro */
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre el logo y el menú */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+/* Logo */
+header .logo {
+    flex: 1; /* Permite que el logo ocupe el espacio necesario */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el logo */
+}
+
+header .logo img {
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre la imagen del logo */
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-left: 1rem;
+    transform: scale(1);
+    transform-origin: left center;
+}
+
+/* Menú */
+header nav {
+    flex: 2; /* Permite que el menú ocupe el espacio necesario */
+    display: flex;
+    justify-content: flex-end; /* Posiciona el menú a la derecha */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave para el efecto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra inicial */
+}
+
+/* Efecto 3D al pasar el cursor por encima */
+header nav ul li a:hover {
+    transform: translateY(-4px) scale(1.05); /* Eleva y agranda el botón */
+    font-size: 1.1rem; /* Aumenta el tamaño de la fuente */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Secciones generales */
+section {
+    padding: 4rem 2rem;
+    margin-bottom: 4rem;
+    scroll-margin-top: 80px; /* Ajusta este valor según el alto de tu header */
+}
+
+/* Sección Inicio */
+#inicio {
+    text-align: center;
+    background: linear-gradient(#afd2cc); /* Escala de azules oscuros */
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    padding: 6rem 2rem; /* Aumentado el padding */
+    color: #000;
+    margin-bottom: 6rem; /* Espacio extra entre secciones */
+}
+
+#eslogan {
+    font-family: 'Lora', serif;
+    font-size: 4rem; /* Ajustado para mejor legibilidad en todas las pantallas */
+    font-weight: 100; /* Delgado, considerar aumentar si necesita más énfasis */
+    text-align: center;
+    color: #fff; /* Color blanco para el texto general */
+    line-height: 1.2; /* Ajustar si es necesario para mejorar la separación de líneas */
+    margin: 0 auto;
+    letter-spacing: 1px; /* Ajuste sutil para mejorar el espaciado */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.highlight-method, .highlight-elevate {
+    color: #fff; /* Color blanco para estos textos */
+    font-weight: 900; /* Negrita para hacer énfasis */
+}
+
+#highlight {
+    font-size: 6rem;
+    color: #7c00cf; /* Morado para destacar "7 y 8 cifras" */
+    font-weight: 900; /* Más negrita para mayor énfasis */
+    white-space: nowrap;
+    display: inline-block;
+    border-right: 2px solid rgba(0, 0, 0, 0.6);
+    animation: typing 4s steps(30, end), blinkCaret 0.75s step-end infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes typing {
+    from { 
+        width: 0; 
+    }
+    to { 
+        width: 100%; 
+    }
+}
+
+@keyframes blinkCaret {
+    from, to { 
+        border-color: transparent; 
+    }
+    50% { 
+        border-color: rgba(0, 0, 0, 0.6); 
+    }
+}
+
+/* Contenedor del botón */
+.cta-button-container {
+    text-align: center;
+    margin-top: 2rem; /* Espacio arriba del botón */
+}
+
+/* Contenedor del video para mantener relación de aspecto */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* El video ocupará el 100% del ancho disponible */
+    max-width: 1000px; /* Limita el ancho máximo del video en pantallas grandes */
+    margin: 0 auto; /* Centra el video */
+}
+
+/* Estilos para el iframe */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    border: 0;
+}
+
+
+
+/* Contenedor del botón de agendar demo */
+.agendar-demo-container {
+    text-align: center;
+}
+
+/* Estilos del botón de agendar demo */
+.agendar-demo-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(120deg, #6a1b9a, #ff05fb); /* Degradado en tonos naranjas */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para el efecto 3D */
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+}
+
+/* Efecto al pasar el cursor por encima */
+.agendar-demo-button:hover {
+    background: linear-gradient(120deg, #6a1b9a, #ff05fb); /* Invertir el degradado para un efecto visual */
+    transform: translateY(-4px); /* Eleva el botón */
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Aumenta la sombra */
+}
+
+/* Sección Nuestro Proceso */
+#nuestro-proceso {
+    background-color: #111727;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#nuestro-proceso h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #7c00cf;
+    margin-bottom: 2rem;
+}
+
+#nuestro-proceso h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+#nuestro-proceso .proceso-subtitulo {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ccc;
+    margin-bottom: 3rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px; /* Grosor de la línea */
+    background-color: #7c00cf;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 60%; /* Incrementa el ancho de cada item */
+    box-sizing: border-box;
+    opacity: 1; /* Visible inicialmente */
+    transform: translateY(0px); /* Ajustado para no mover inicialmente */
+    transition: opacity 1s, transform 1s;
+    margin-bottom: 60px; /* Espacio entre items */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre imagen y texto */
+}
+
+.timeline-item:nth-child(odd) {
+    left: -10%; /* Movimiento hacia la izquierda */
+}
+
+.timeline-item:nth-child(even) {
+    left: 60%; /* Movimiento hacia la derecha, ajustado desde el 50% */
+}
+
+.timeline-item {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(50px); /* Empieza más abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+}
+
+/* Clase que se añade cuando el item está visible */
+.timeline-item.visible {
+    opacity: 1; /* Totalmente visible */
+    transform: translateY(0); /* Mueve a la posición final */
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #111727;
+    color: #fff;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
+    text-align: left;
+    width: 100%; /* Amplia el contenedor para llenar el espacio */
+}
+
+.timeline-tittle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    font-size: 1.5rem;
+    color: #eee;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para la imagen */
+.timeline-image {
+    width: 40%; /* Aumento del tamaño de la imagen a 40% */
+    height: auto; /* Mantener proporción */
+    object-fit: cover;
+    margin-right: 20px; /* Espacio entre la imagen y el contenido */
+    z-index: 2;
+    border: none; /* Sin borde */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Asegura que la transición esté definida */
+}
+
+.timeline-image:hover {
+    transform: scale(1.05); /* Efecto de escala al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+
+/* Responsivo (pantallas pequeñas) */
+@media (max-width: 768px) {
+    .timeline {
+        padding: 2rem 1rem;
+    }
+
+    .timeline::after {
+        left: 10px; /* Línea más hacia la izquierda */
+    }
+
+    .timeline-item:nth-child(odd) {
+        left: 1%; /* Movimiento hacia la izquierda */
+    }
+
+    .timeline-item {
+        width: 100%; /* Los elementos ocupan el 100% en pantallas pequeñas */
+        left: 0; /* Siempre alineados a la izquierda */
+        opacity: 1; /* Visible sin animación */
+        transform: none; /* No se mueven en pantallas pequeñas */
+        flex-direction: column; /* Alineación vertical de imagen y texto */
+        align-items: flex-start; /* Alineación de los ítems */
+        padding: 10px 0; /* Reducción del padding */
+        margin-bottom: 40px; /* Reducción del espacio entre items */
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0; /* Alinea todos los items de forma similar en móviles */
+    }
+
+    .timeline-image {
+        width: 100%; /* La imagen ocupa todo el ancho */
+        max-height: 200px; /* Limitar la altura de la imagen */
+        margin-bottom: 10px; /* Separación entre imagen y contenido */
+    }
+
+    .timeline-content {
+        width: 100%;
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+        padding: 15px 20px; /* Menos padding en pantallas pequeñas */
+    }
+
+    .timeline-tittle {
+        font-size: 1.2rem; /* Reducir el tamaño del título */
+    }
+
+    .timeline-content p {
+        font-size: 1rem; /* Reducir el tamaño del texto */
+        line-height: 1.4; /* Reducir el espacio entre líneas */
+    }
+}
+
+
+/* Botón de llamada a la acción */
+.cta-button-container {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #7c00cf;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #58008f;
+}
+
+/* Animaciones al hacer scroll */
+.timeline-item.visible {
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sección Nuestro Objetivo */
+#nuestro-objetivo {
+    background-color: #111727;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 10rem; /* Aumento para más espacio al final de la sección */
+}
+
+#nuestro-objetivo h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#nuestro-objetivo h2 {
+    color: #7c00cf;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#nuestro-objetivo > p {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 3rem; /* Solo el párrafo principal tiene este tamaño */
+}
+
+/* Estilo para los párrafos dentro de los contenedores de los pilares */
+.pilar-back p {
+    color: #fff;
+    font-size: 2rem; /* Tamaño más pequeño para los párrafos de cada pilar */
+    margin: 10px 0; /* Espaciado entre los párrafos de los pilares */
+}
+
+.objetivo-pilares {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem; /* Añadir más espacio entre los pilares */
+}
+
+.pilar {
+    position: relative;
+    width: 25%;
+    margin: 0.5rem;
+    text-align: center;
+    perspective: 1000px;
+    height: 350px; /* Fijar una altura para que el contenedor tenga espacio suficiente */
+}
+
+.pilar-front, .pilar-back {
+    width: 100%;
+    height: 100%; /* Ajustar ambas caras para que ocupen todo el contenedor */
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pilar-front {
+    z-index: 2;
+    background-color: #111727; /* Asegurar que tenga un fondo visible */
+}
+
+.pilar-back {
+    transform: rotateY(180deg);
+    color: #fff;
+    padding: 15px;
+    font-size: 0.9rem;
+    background-color: #111727; /* Fondo oscuro para la parte trasera */
+}
+
+.pilar:hover .pilar-front {
+    transform: rotateY(-180deg);
+}
+
+.pilar:hover .pilar-back {
+    transform: rotateY(0deg);
+}
+
+.pilar img {
+    width: 100%;
+    max-width: 350px;
+    max-height: 350px;
+    border-radius: 8px;
+}
+
+/* Estilos de la sección de agendar llamada */
+#agendar-llamada {
+    background-color: #111727;
+    padding: 4rem 2rem;
+    margin-bottom: 4rem;
+}
+
+.contenedor-agendar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenido-izquierda {
+    width: 48%; /* Mantiene el 48% de ancho */
+    color: #fff;
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Asegura que los elementos estén alineados al centro */
+}
+
+.contenido-izquierda h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #7c00cf;
+}
+
+.contenido-izquierda p {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contenido-izquierda img {
+    width: 250px; /* Controla el tamaño de la imagen */
+    height: 250px; /* Asegura que la imagen sea cuadrada */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien dentro del contenedor */
+    margin-bottom: 1.5rem;
+}
+
+.calendly-container {
+    width: 48%;
+}
+
+/* Eliminar espacio adicional en la parte superior de Calendly */
+.calendly-inline-widget {
+    margin-top: 0;
+}
+
+/* Sección de Preguntas */
+#preguntas {
+    background-color: #111727;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+#preguntas h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+#preguntas p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 3rem;
+}
+
+#preguntas-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#preguntas-form label {
+    color: #fff;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#preguntas-form textarea,
+#preguntas-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#preguntas-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #7c00cf;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #58008f;
+}
+
+/* Footer */
+footer {
+    background-color: #111727;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Animación del fondo */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Media Queries para responsive */
+
+/* Ajustes para tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    header nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.5rem;
+    }
+
+    #eslogan {
+        font-size: 3rem;
+    }
+
+    #highlight {
+        font-size: 4rem;
+    }
+
+    .agendar-demo-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* Ajustes para la sección de pilares */
+    .objetivo-pilares {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pilar {
+        width: 80%;
+        margin-bottom: 2rem;
+    }
+
+    .contenido-izquierda, .calendly-container {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 0;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    #inicio {
+        padding: 4rem 1rem; /* Reducido el padding en pantallas más pequeñas */
+    }
+
+    #eslogan {
+        font-size: 2rem;
+    }
+
+    #highlight {
+        font-size: 2.5rem;
+    }
+
+    .agendar-demo-button {
+        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+    }
+
+    /* Ajustes para la sección de pilares */
+    .pilar {
+        width: 100%;
+    }
+
+    /* Ajustes para la sección de agendar llamada */
+    .contenedor-agendar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenido-izquierda, .calendly-container {
+        width: 100%;
+    }
+
+
+    #agendar-llamada, #preguntas {
+        padding: 2rem 1rem; /* Reducido padding en pantallas más pequeñas */
+    }
+
+    #preguntas-form label, #preguntas-form textarea, #preguntas-form input, .submit-button {
+        font-size: 1rem;
+    }
+}
+
+/* Ajuste de desplazamiento para elementos */
+section {
+    scroll-margin-top: 80px; /* Ajusta este valor según el alto de tu header */
+}
